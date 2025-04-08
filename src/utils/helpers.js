@@ -14,3 +14,12 @@ export const formatPhoneNumber = (phone) => {
       return false;
     }
   };
+
+  // export const verifyImageUrl = async (url) => {
+  //   try {
+  //     const res = await fetch(url, { method: 'HEAD' });
+  //     return res.ok; // Returns true if image exists
+  //   } catch {
+  //     return false;
+  //   }
+  // };

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+// import verifyImageUrl from 'verifyImageUrl';
 import {
   TextField,
   Button,
@@ -13,6 +14,7 @@ import {
   FormHelperText
 } from '@mui/material';
 
+
 const ProfileForm = ({ profile, onSubmit, onCancel }) => {
   const [imagePreview, setImagePreview] = useState(profile?.photo || '');
 
@@ -23,6 +25,15 @@ const validationSchema = Yup.object().shape({
       return await verifyImageUrl(value);
     })
 });
+
+const verifyImageUrl = async (url) => {
+  try {
+    const res = await fetch(url, { method: 'HEAD' });
+    return res.ok; // Returns true if image exists
+  } catch {
+    return false;
+  }
+};
 
   const formik = useFormik({
     initialValues: {

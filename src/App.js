@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import HomePage from './pages/HomePage/HomePage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import AdminPage from './pages/AdminPage/AdminPage';
+import AdminDashboard from './pages/AdminDashboard/AdminDashboard';
 import Navbar from './components/Shared/Navbar';
 import { ProfilesProvider } from './context/ProfilesContext';
 
@@ -33,6 +34,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/profile/:id" element={<ProfilePage />} />
             <Route path="/admin" element={<AdminPage />} />
+            <Route path='/admin' element={<AdminDashboard />} />
           </Routes>
         </Router>
       </ProfilesProvider>
